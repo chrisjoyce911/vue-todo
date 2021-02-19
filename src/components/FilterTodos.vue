@@ -16,9 +16,22 @@
 import { mapActions } from "vuex";
 export default {
   name: "FilterTodos",
+  data() {
+    return {
+      limit: null,
+      filterNumber: [
+        { name: "200", code: "200" },
+        { name: "100", code: "100" },
+        { name: "50", code: "50" },
+        { name: "10", code: "10" },
+        { name: "5", code: "5" },
+      ],
+    };
+  },
   methods: {
     ...mapActions(["filterTodos"]),
     changeLimit(e) {
+      console.log(e);
       this.filterTodos(e.target.value);
     },
   },

@@ -15,7 +15,11 @@
         v-bind:class="{ 'is-complete': todo.completed }"
       >
         {{ todo.title }}
-        <i @click="deleteTodo(todo.id)" class="fas fa-trash-alt"></i>
+        <Button
+          icon="pi pi-trash"
+          class="p-button-danger p-button-text trash"
+          @click="deleteTodo(todo.id)"
+        />
       </div>
     </div>
   </div>
@@ -23,6 +27,7 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
+
 export default {
   name: "Todos",
   methods: {
@@ -58,12 +63,10 @@ export default {
   position: relative;
   cursor: pointer;
 }
-i {
+.trash {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  color: #fff;
-  cursor: pointer;
 }
 .legend {
   display: flex;
