@@ -86,15 +86,25 @@ i {
   background: #35495e;
   color: #fff;
 }
-@media (max-width: 500px) {
+
+@media (min-width: 320px) {
   .todos {
     grid-template-columns: 1fr;
   }
 }
-
-@media (max-width: 900px) {
+@media (min-width: 768px) {
   .todos {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .todos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1900px) {
+  .todos {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 </style>
